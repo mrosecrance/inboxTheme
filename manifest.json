@@ -7,7 +7,15 @@
   "content_scripts": [
     {
       "matches": ["https://inbox.google.com/*", "http://inbox.google.com/*"],
-      "js": ["theme.js"]
+      "js": ["theme.js", "options.js"]
     }
+  ],
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "permissions": [
+    "storage"
   ]
 }

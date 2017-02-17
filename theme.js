@@ -326,6 +326,7 @@
     }, {quantize: 1}]
 }, {}, [2]);
 
+var image;
 
 var resetImage = function () {
     var elem = document.querySelector(".ix");
@@ -335,7 +336,7 @@ var resetImage = function () {
 
     var imageNum = Math.floor(Math.random() * 100);
     var imageUrl = "https://unsplash.it/800?image=" + imageNum;
-    var image = new Image();
+    image = new Image();
     image.crossOrigin = "Anonymous";
     image.src = imageUrl;
 
@@ -369,5 +370,20 @@ var resetImage = function () {
         }
     };
 };
+var checkAndResetImage = function(){
+    var elem = document.querySelector(".ix");
+    if (elem == undefined) {
+        return;
+    }
+    var sunnyImage = document.querySelector(".jJ");
+    if (sunnyImage == undefined) {
+        return;
+    }
+    elem.innerHTML = '';
+    elem.appendChild(image);
+};
+
 resetImage();
-setInterval(resetImage, 5000);
+setInterval(checkAndResetImage, 100);
+
+
