@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+
+  "name": "Google Inbox Theme",
+  "description": "This extension adds some color and a picture to Google Inbox",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": ["https://inbox.google.com/*", "http://inbox.google.com/*"],
+      "js": ["theme.js"]
+    }
+  ]
+}
